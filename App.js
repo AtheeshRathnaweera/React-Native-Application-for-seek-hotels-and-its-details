@@ -4,8 +4,9 @@ import Home from './App/ComponentFolder/Home';
 import Welcome from './App/ComponentFolder/Welcome';
 
 const MainNavigator = createStackNavigator({
-  home: Home,
-  welcome: Welcome
+
+  welcome: Welcome,
+  home: Home
 
 })
 
