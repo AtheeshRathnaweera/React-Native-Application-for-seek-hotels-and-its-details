@@ -68,8 +68,8 @@ class Welcome extends Component<Props> {
     <View style={signinhereHolder} >
        <Text style={signinHereText}>Don't have an account? Sign in from here.</Text>
 
-        <Button mode="contained" style={buttonStyle}>
-          LOG IN VIA FACEBOOK
+        <Button mode="contained" style={buttonStyle} onPress={()=>this.props.navigation.navigate('signin')}>
+            SIGN IN
         </Button>
 
 

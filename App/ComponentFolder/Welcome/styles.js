@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
     welcomeTxt:{
-        fontSize: 55,
+        fontSize: 60,
         textAlign: 'center',
         color: '#115175',
         fontFamily: 'lucida grande'
