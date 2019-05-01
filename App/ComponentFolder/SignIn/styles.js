@@ -43,7 +43,14 @@ export default StyleSheet.create({
         flexDirection: 'column',
         marginTop:15
 
-    }
+    },
+    orText:{
+        fontSize: 15,
+        textAlign: 'center',
+        marginBottom: 5
+
+
+    },
 
 
 

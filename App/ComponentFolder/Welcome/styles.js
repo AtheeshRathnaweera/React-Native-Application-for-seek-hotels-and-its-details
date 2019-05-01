@@ -51,7 +51,7 @@ export default StyleSheet.create({
 
     },
     signinHereText:{
-        fontSize: 16,
+        fontSize: 15,
         textAlign: 'center',
         marginBottom: 5
 

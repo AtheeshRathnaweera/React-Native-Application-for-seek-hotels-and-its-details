@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, Text, View} from 'react-native';
+import {Platform, Text, View,ToastAndroid,Alert, SafeAreaView} from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 import styles from './styles'
 
@@ -11,19 +11,38 @@ class SignIn extends Component<Props> {
     }
 
     state = {
-         name: '',
-         telephone: '',
-         email:'',
-         password:'',
-         repassword:''
+         name: "",
+         telephone: "",
+         email:"",
+         password:"",
+         repassword:""
     };
+
+    signInMethod(){
+      const { name, telephone,email,password,repassword} = this.state
+
+      if(name == "" || password == "" || telephone =="" || email =="" || repassword ==""){
+          ToastAndroid.show("Please fill the forums properly !",ToastAndroid.LONG);
+      }else{
+          Alert.alert("signInMethod","Name :"+name+" Password : "+password,[{text:"Ok"}])
+      }
+
+    }
+
+    checkRePassword(text){
+      ToastAndroid.show("repassword :"+text,ToastAndroid.LONG);
+      this.setState({ repassword:text })
+
+    }
 
 
  render() {
 
-  const {parent,SignInTxtHolder, SignInTxt, formHolder, inputFields,buttonStyle,buttonHolder} = styles
+  const {parent,SignInTxtHolder, SignInTxt, formHolder, inputFields,buttonStyle,buttonHolder,orText} = styles
 
    return (
+
+     <SafeAreaView style={parent}>
 
     <View style={parent}>
 
@@ -40,6 +59,7 @@ class SignIn extends Component<Props> {
                   label= 'Name'
                   selectionColor='#115175'
                   value= {this.state.name}
+                  onChangeText={text => this.setState({ name:text })}
               />
 
               <TextInput
@@ -48,6 +68,8 @@ class SignIn extends Component<Props> {
                   label= 'Telephone No.'
                   selectionColor='#115175'
                   value= {this.state.telephone}
+                  onChangeText={text => this.setState({ telephone:text })}
+                  keyboardType='phone-pad'
               />
 
               <TextInput
@@ -56,6 +78,8 @@ class SignIn extends Component<Props> {
                   label= 'Email'
                   selectionColor='#115175'
                   value= {this.state.email}
+                  keyboardType='email-address'
+                  onChangeText={text => this.setState({ email:text })}
               />
 
               <TextInput
@@ -64,6 +88,8 @@ class SignIn extends Component<Props> {
                   label= 'Password'
                   selectionColor='#115175'
                   value= {this.state.password}
+                  onChangeText={text => this.setState({ password:text })}
+                  secureTextEntry={true} 
               />
 
               <TextInput
@@ -72,15 +98,20 @@ class SignIn extends Component<Props> {
                   label= 'Reenter the Password'
                   selectionColor='#115175'
                   value= {this.state.repassword}
+                  onChangeText={text => this.checkRePassword(text)}
+                  secureTextEntry={true} 
               />
 
             <View style={buttonHolder} >
 
-                  <Button mode="contained" style={buttonStyle}>
+                  <Button mode="contained" style={buttonStyle} onPress={_=>this.signInMethod()}>
                     SIGN IN
                   </Button>
 
-                  <Button mode="contained" style={buttonStyle}>
+                  <Text style={orText}>Or</Text>
+
+
+                  <Button mode="contained" style={buttonStyle} onPress={()=>this.props.navigation.navigate('home')}> 
                     SIGN IN VIA FACEBOOK
                   </Button>
 
@@ -90,6 +121,8 @@ class SignIn extends Component<Props> {
 
           </View>
    </View>
+
+   </SafeAreaView>
      
    );
  }
