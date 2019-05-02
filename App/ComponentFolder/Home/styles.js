@@ -4,30 +4,29 @@ export default StyleSheet.create({
 
     parent:{
         flex:1,
-        backgroundColor: 'rgb(237,249,249)',
-        flexDirection: 'column'
+       // backgroundColor: 'rgb(237,249,249)',
+        flexDirection: 'column',
+        justifyContent: 'flex-start'
+    },
+    container:{
+        flex:1,
+      backgroundColor: 'white'
     },
     SearchHolder:{
         flex:1,
         color: 'skyblue',
-        justifyContent:'center',
-        marginRight:10,
-        marginLeft:10
+        justifyContent:'center'
     
     },
    
-    RecentSearches:{
-        flex:4,
-        flexDirection: 'column',
-        marginLeft:10,
-        marginRight:10
-    },
     RecentSearchesTitleText:{
     
         marginRight:10,
         marginLeft:10,
         marginBottom:10,
-        fontSize:17
+        marginTop:10,
+        fontSize:16,
+        color:'black'
     
     },
     buttonStyle:{

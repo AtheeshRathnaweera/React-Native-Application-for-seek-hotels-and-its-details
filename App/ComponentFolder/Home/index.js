@@ -3,6 +3,7 @@ import {Platform, Text, View, SafeAreaView} from 'react-native';
 import styles from './styles'
 import { TextInput, Button,Searchbar, Avatar, Card, Title, Paragraph } from 'react-native-paper';
 import CardComponent from '../CardComponent';
+import SearchBarComponent from '../SearchBarComponent';
 import { Container, Content } from 'native-base';
 
 
@@ -18,39 +19,28 @@ class Home extends Component<Props> {
   };
 
  render() {
-  const {logInButtonHolder,SearchHolder,RecentSearches,buttonStyle, RecentSearchesTitleText,upperBox,parent,
-    welcomeTxtHolder, welcomeTxt, formHolder } = styles
+  const {RecentSearchesTitleText,container,content} = styles
   const { firstQuery } = this.state;
 
    return (
 
-    <SafeAreaView style={parent}>
 
 
-     <View  style={parent}>
-          <View style={SearchHolder}>
-              <Searchbar
-                  placeholder="Type the town"
-                  onChangeText={query => { this.setState({ firstQuery: query }); }}
-                  value={firstQuery}
-                />
+       <Container >
 
-       </View>
+          <SearchBarComponent/>
 
-       <Text style={RecentSearchesTitleText}>Recent Searches</Text>
+            <Text style={RecentSearchesTitleText} >Recent Searches</Text>
 
-       <Container>
-            <Content>
+            <Content >
                 <CardComponent/>
-              </Content>
+
+                <CardComponent/>
+
+                <CardComponent/>
+            </Content>
          </Container>
 
-  
-
-       
-     </View>
-
-     </SafeAreaView>
      
    );
  }
