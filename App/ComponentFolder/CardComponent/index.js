@@ -29,14 +29,9 @@ class CardComponent extends Component{
               <Body >
                      <Text style={styles.hotelName}>Hotel Name</Text>
                      <Text>Hotel Name</Text>
-                  </Body>
-
-
-             
+              </Body>
             </CardItem>
 
-              
-              
             </Card>
 
         );
