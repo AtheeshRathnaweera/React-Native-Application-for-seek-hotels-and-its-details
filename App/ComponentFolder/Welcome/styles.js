@@ -5,7 +5,7 @@ export default StyleSheet.create({
         fontSize: 60,
         textAlign: 'center',
         color: '#115175',
-        fontFamily: 'lucida grande'
+        fontFamily: 'lucida_font'
     },
 
     input:{

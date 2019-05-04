@@ -25,8 +25,10 @@ export default StyleSheet.create({
         marginLeft:10,
         marginBottom:10,
         marginTop:10,
-        fontSize:16,
-        color:'black'
+        fontSize:15,
+        color:'#808080',
+        textAlign:'center'
+      
     
     },
     buttonStyle:{
