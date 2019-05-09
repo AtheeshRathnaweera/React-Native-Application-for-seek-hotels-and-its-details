@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import styles from './styles'
 import CardComponent from '../CardComponent';
 import SearchBarComponent from '../SearchBarComponent';
+import PriceComponent from '../PriceComponent'
 import { Container, Header, Content, Footer, FooterTab, Button, Text , Body, Left, Right, Title} from 'native-base';
 
 
@@ -38,7 +39,7 @@ class PricesDisplay extends Component<Props> {
     </Header>
 
     <Content >
-            <Text style={{ alignContent:"center", alignItems:"center"}}>This is the Prices Display tab</Text>
+        <PriceComponent />
     </Content>
 
     <Footer>

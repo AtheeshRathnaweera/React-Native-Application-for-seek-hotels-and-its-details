@@ -38,22 +38,24 @@ class DisplayHotelDetails extends Component<Props> {
             <Title > {'Ambalama Leisure Lounge'.toUpperCase()} </Title>
          
           </Header>
-
-     
-
-      <Content style={{ flex:1 }}>
-              <Image 
-                 source={ { uri : 'http://www.offtoeurope.com/wp-content/uploads/2010/06/radisson-pool.jpg' }}
-                 style={{ flex:1, height:250, width: 330, alignSelf:"center" }}/>
-
-      </Content>
-
+ 
      
       <Content  style={{ flex:1}}>
           <List>
+
+            <ListItem >
+            
+              <Body>
+                <Image 
+                 source={{ uri : 'http://www.offtoeurope.com/wp-content/uploads/2010/06/radisson-pool.jpg' }}
+                 style={{ height:250, width: 330, alignSelf:"center" }}/>
+              </Body>
+             
+            </ListItem>
+
             <ListItem avatar>
               <Left>
-                  <Icon ios='ios-menu' android="md-menu" style={{fontSize: 20, color: '#236a93', alignSelf: "center"}}/>
+                  <Icon ios='ios-pin' android="md-pin" style={{fontSize:23, color: '#236a93', alignSelf: "center"}}/>
               </Left>
               <Body>
                 <Text>Address</Text>
@@ -64,22 +66,49 @@ class DisplayHotelDetails extends Component<Props> {
 
             <ListItem avatar>
               <Left>
-                <Thumbnail source={{ uri: 'http://www.offtoeurope.com/wp-content/uploads/2010/06/radisson-pool.jpg' }} />
+              <Icon ios='ios-phone-portrait' android="md-phone-portrait" style={{fontSize:23,color: '#236a93', alignSelf: "center"}}/>
               </Left>
               <Body>
                 <Text>Contact</Text>
-                <Text note> (+94) 112 778 050 </Text>
+                <Text note>(+94) 112 778 050  /  (+94) 71 722 3371</Text>
               </Body>
             
             </ListItem>
 
             <ListItem avatar>
-              <Left>
-                <Thumbnail source={{ uri: 'http://www.offtoeurope.com/wp-content/uploads/2010/06/radisson-pool.jpg' }} />
+              <Left style={{ justifyContent: 'center', alignItems: "center"}}>
+              <Icon ios='ios-link' android="md-link" style={{color: '#236a93'}}/>
+              </Left>
+              <Body>
+                <Text>Website</Text>
+                <Text note>http://ambalama.lk/</Text>
+              </Body>
+              
+            </ListItem>
+
+            <ListItem avatar>
+              <Left style={{ justifyContent: 'center', alignItems: "center"}}>
+              <Icon ios='ios-mail' android="md-mail" style={{color: '#236a93'}}/>
               </Left>
               <Body>
                 <Text>Email</Text>
                 <Text note>rathnaweeraastheesh72@gmail.com</Text>
+              </Body>
+              
+            </ListItem>
+
+            <ListItem avatar>
+              <Left style={{ justifyContent: 'center', alignItems: "center"}}>
+              <Icon ios= "ios-information-circle" android="md-information-circle" style={{color: '#236a93'}}/>
+              </Left>
+              <Body>
+                <Text>About</Text>
+                <Text note style={{ textAlign: 'justify' }}>Ambalama Leisure Lounge, Hanwella offers guests an
+                 Eco friendly boutique hotel stay with a touch of sri lankan heritage and traditional hospitality.
+                 The cottages and rooms resemble village cottages and give visitors an in depth idea of historic
+                 Sri Lankan culture and architecture.Accommodation is available as cottages(A/C, non A/C), rooms(A/C, non A/C) 
+                 and family cottage.The hotel is famous among locals and foreigners for providing a taste of 
+                 sri lankan authentic food matched by no other and also for its captivating architecture ranging from the traditional sri lankan heritage to the dutch era.</Text>
               </Body>
               
             </ListItem>

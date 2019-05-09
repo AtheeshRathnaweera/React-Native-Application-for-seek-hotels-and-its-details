@@ -56,7 +56,7 @@ class CardComponent extends Component{
 
               <Body >
                      <Text style={styles.hotelName} > {hotelNames[this.props.hotelname]} </Text>
-                     <Text style={styles.hotelLocation} > {hotelLocations[this.props.hotelname]} </Text>
+                     <Text style={styles.hotelLocation} >{hotelLocations[this.props.hotelname]} </Text>
               </Body>
 
             </CardItem>
