@@ -31,7 +31,7 @@ class RatingsDisplay extends Component<Props> {
     <Container>
 
     <Header style={{ alignContent:"center", alignItems:"center" , backgroundColor: "#115175"}}>
-        <Title > {'Ambalama Leisure Lounge'.toUpperCase()} </Title>
+          <Title style={{ color: '#ffff'}} > {this.props.navigation.state.params.hotelName} </Title>
     </Header>
 
     <Content >
@@ -73,13 +73,13 @@ class RatingsDisplay extends Component<Props> {
         <Button onPress={()=> { this.props.navigation.replace('pricesDisplay') }}>
           <Text>Prices</Text>
         </Button>
-        <Button onPress={()=> { this.props.navigation.replace('viewHotelDetails') }}>
+        <Button onPress={()=> { this.props.navigation.replace('viewHotelDetails')}}>
           <Text >Details</Text>
         </Button>
         <Button active style={activeTab}>
           <Text>Ratings</Text>
         </Button>
-        <Button onPress={()=> { this.props.navigation.replace('galleryDisplay') }}>
+        <Button onPress={()=> { this.props.navigation.replace('galleryDisplay')}}>
           <Text>Gallery</Text>
         </Button>
       </FooterTab>

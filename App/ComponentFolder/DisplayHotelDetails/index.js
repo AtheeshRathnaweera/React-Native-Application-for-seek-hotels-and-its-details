@@ -5,6 +5,7 @@ import SearchBarComponent from '../SearchBarComponent';
 import { Container, Header, Content, Footer, FooterTab, Button, Text , Body, Left, Right, 
         Title, Toast, List, ListItem, Thumbnail,Icon} from 'native-base';
 import {Platform, View, SafeAreaView, Image,StyleSheet, TouchableWithoutFeedback,Alert} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 type Props = {};
@@ -23,19 +24,77 @@ class DisplayHotelDetails extends Component<Props> {
 
   }
 
+  storeTheData(){
+
+    async function getItem(item) {
+      try {
+        const value = await AsyncStorage.getItem(item);
+        console.log(value);
+        return value;
+      } catch (error) {
+        console.error("This is the error : "+e.message);
+      }
+    }
+
+  }
+
+
+
+
+
+  
+
  render() {
   const {footer, activeTab, parent} = styles
   const { firstQuery } = this.state;
+  var resHotelName = this.props.navigation.getParam('hotelName', 'no');
+ 
+  //recHotelName = this.props.navigation.state.params.hotelName;
+
+  if(resHotelName == 'no'){
+    console.debug("recHotelName is not found.");
+  
+    //get the saved value and set to resHotelName
+    getData = async () => {
+      try {
+        const value =  AsyncStorage.getItem('hotelName')
+        if(value !== null) {
+          resHotelName = value;
+          console.debug("rec value : "+value+" "+resHotelName);
+        }else{
+          console.debug("Value is null");
+        }
+      } catch(e) {
+        console.error(e.message);
+      }
+    }
+
+
+    console.debug("This is the stored value: "+resHotelName);
+  }else{
+
+    console.log("resHotelName is received correctly.");
+
+ 
+     
+        AsyncStorage.setItem('hotelName', resHotelName);
+        console.debug("value stored.");
+
+    
+       
+     
+  
+    
+  }
 
    return (
 
     <Container style={parent}>
 
-      {console.log("This is the props "+this.props.someParameter)}
       
           <Header style={{alignItems:"center", backgroundColor: "#115175"}}>
         
-            <Title > {'Ambalama Leisure Lounge'.toUpperCase()} </Title>
+            <Title style={{ color: '#ffff'}} > {resHotelName} </Title>
          
           </Header>
  
@@ -125,10 +184,10 @@ class DisplayHotelDetails extends Component<Props> {
         <Button active style={activeTab}>
           <Text >Details</Text>
         </Button>
-        <Button onPress={()=> { this.props.navigation.replace('ratingsDisplay') }}>
+        <Button onPress={()=> { this.props.navigation.replace('ratingsDisplay')}}>
           <Text>Ratings</Text>
         </Button>
-        <Button onPress={()=> { this.props.navigation.replace('galleryDisplay') }}>
+        <Button onPress={()=> { this.props.navigation.replace('galleryDisplay')  }}>
           <Text>Gallery</Text>
         </Button>
       </FooterTab>

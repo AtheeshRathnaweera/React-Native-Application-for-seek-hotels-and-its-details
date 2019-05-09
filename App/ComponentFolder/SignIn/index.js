@@ -40,7 +40,10 @@ class SignIn extends Component<Props> {
 
   const {parent,SignInTxtHolder, SignInTxt, formHolder, inputFields,buttonStyle,buttonHolder,orText} = styles
 
+
    return (
+
+    
 
      <SafeAreaView style={parent}>
 

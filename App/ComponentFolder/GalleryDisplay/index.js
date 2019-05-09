@@ -33,7 +33,7 @@ class GalleryDisplay extends Component<Props> {
 
     <Header style={{ alignContent:"center", alignItems:"center" , backgroundColor: "#115175"}}>
         
-            <Title >Hotel Name</Title>
+        <Title style={{ color: '#ffff'}} > {this.props.navigation.state.params.hotelName} </Title>
          
     </Header>
 

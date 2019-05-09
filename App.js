@@ -17,8 +17,7 @@ const MainNavigator = createStackNavigator({
   viewHotelDetails: DisplayHotelDetails,
   galleryDisplay: GalleryDisplay,
   pricesDisplay:  PricesDisplay,
-  ratingsDisplay:    RatingsDisplay,
- 
+  ratingsDisplay: RatingsDisplay,
 
 })
 

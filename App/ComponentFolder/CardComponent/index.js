@@ -2,14 +2,15 @@
 import React,{Component} from 'react';
 import {Platform, Text, View, SafeAreaView, Image,StyleSheet, TouchableWithoutFeedback,Alert} from 'react-native';
 import { Card, CardItem,Thumbnail, Body, Left, Right,Button,Icon, Container} from 'native-base';
-
-
+import { withNavigation } from 'react-navigation';
 
 class CardComponent extends Component{
     
 
     _OnCardPress(cardName) {
-    
+        console.debug("Card clicked.");
+     
+         
       }
     
     render(){
@@ -35,19 +36,20 @@ class CardComponent extends Component{
 
         return(
 
-            <TouchableWithoutFeedback   onPress={() => this.props.navigation.navigate('viewHotelDetails')}>
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('viewHotelDetails',
+                                        {hotelName: hotelNames[this.props.hotelname] , typeOfCall: 1 })}>
 
             <Card style={styles.card}  >
 
               <CardItem>
-              <Body>
+                <Body>
 
-                <Image 
-                 source={ { uri : hotelImages[this.props.hotelname] }}
-                 style={{ height:240, width: 310 }}
-               />
+                    <Image 
+                        source={ { uri : hotelImages[this.props.hotelname] }}
+                        style={{ height:240, width: 310 }}
+                    />
         
-              </Body>
+                </Body>
 
              
              </CardItem>
@@ -65,21 +67,18 @@ class CardComponent extends Component{
 
             </TouchableWithoutFeedback> 
 
-        
-
         );
     }
 }
 
 
-export default CardComponent;
+export default withNavigation(CardComponent);
 
 const styles= StyleSheet.create({
     card : {
         marginLeft:10,
         marginRight:10,
         elevation: 5
-
 
     },
     hotelName:{

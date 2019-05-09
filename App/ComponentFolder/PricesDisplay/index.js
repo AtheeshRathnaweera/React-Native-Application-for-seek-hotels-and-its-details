@@ -25,6 +25,7 @@ class PricesDisplay extends Component<Props> {
  render() {
  const {footer, activeTab} = styles
   const { firstQuery } = this.state;
+  const hotelName = this.props.navigation.getParam('hotelName', 'NOT FOUND');
 
    return (
 
@@ -34,7 +35,7 @@ class PricesDisplay extends Component<Props> {
 
     <Header style={{ alignContent:"center", alignItems:"center", backgroundColor: "#115175"}}>
         
-    <Title > {'Ambalama Leisure Lounge'.toUpperCase()} </Title>
+          <Title style={{ color: '#ffff'}} > {hotelName} </Title>
          
     </Header>
 

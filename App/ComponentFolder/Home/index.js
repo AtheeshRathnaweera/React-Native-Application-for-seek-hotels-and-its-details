@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Platform, Text, View, SafeAreaView,TouchableWithoutFeedback } from 'react-native';
+import {Platform, Text, View, SafeAreaView,TouchableWithoutFeedback, AsyncStorage } from 'react-native';
 import styles from './styles'
 import CardComponent from '../CardComponent';
 import SearchBarComponent from '../SearchBarComponent';
@@ -22,29 +22,30 @@ class Home extends Component<Props> {
   const { firstQuery } = this.state;
   const { navigation } = this.props.navigation;
 
+  const hotelNames = {
+    "1" : "Ambalama Leisure Lounge",
+    "2" : "Bentota Beach Hotel",
+    "3" : "Belihuloya Rest House"
+  }
+
+
+
    return (
 
-
+   
 
        <Container >
 
           <SearchBarComponent/>
 
-          <TouchableWithoutFeedback  nameofhotel = "Ambala Leisure Lounge"
-          onPress={() => this.props.navigation.navigate('viewHotelDetails',{param:'SomeParameter'})} >
-
             <Text style={RecentSearchesTitleText} >Recent Searches</Text>
-
-            </TouchableWithoutFeedback>
         
+            <Content>
 
-            <Content >
-
-           
                 <CardComponent hotelname="1" />
                 <CardComponent hotelname="2" />
-
                 <CardComponent hotelname="3" />
+
             </Content>
          </Container>
 
