@@ -34,7 +34,7 @@ class PricesDisplay extends Component<Props> {
 
     <Header style={{ alignContent:"center", alignItems:"center", backgroundColor: "#115175"}}>
         
-            <Title >Hotel Name</Title>
+    <Title > {'Ambalama Leisure Lounge'.toUpperCase()} </Title>
          
     </Header>
 

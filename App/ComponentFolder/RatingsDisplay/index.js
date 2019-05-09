@@ -2,7 +2,9 @@ import React,{Component} from 'react';
 import styles from './styles'
 import CardComponent from '../CardComponent';
 import SearchBarComponent from '../SearchBarComponent';
-import { Container, Header, Content, Footer, FooterTab, Button, Text , Body, Left, Right, Title} from 'native-base';
+import { Container, Header, Content, Footer, FooterTab, Button, Text , 
+  ProgressBar,progress, List, ListItem, Title, Icon, CardItem} from 'native-base';
+import SingleCommentComponent from '../SingleCommentComponent';
 
 
 type Props = {};
@@ -26,19 +28,44 @@ class RatingsDisplay extends Component<Props> {
   const { firstQuery } = this.state;
 
    return (
-
-
-
     <Container>
 
     <Header style={{ alignContent:"center", alignItems:"center" , backgroundColor: "#115175"}}>
-        
-            <Title >Hotel Name</Title>
-         
+        <Title > {'Ambalama Leisure Lounge'.toUpperCase()} </Title>
     </Header>
 
     <Content >
-    <Text style={{ alignContent:"center", alignItems:"center"}}>This is the ratings tab</Text>
+         <CardItem style = {{ flexDirection: 'row' , alignItems: 'center', justifyContent: 'center'}}> 
+            <Icon ios='ios-star' android="md-star" style={{ color: '#daa520'}}/> 
+            <Icon ios='ios-star' android="md-star" style={{ color: '#daa520'}}/> 
+            <Icon ios='ios-star-outline' android="md-star-outline" style={{ color: '#daa520'}}/> 
+            <Icon ios='ios-star-outline' android="md-star-outline" style={{ color: '#daa520'}}/> 
+            <Icon ios='ios-star-outline' android="md-star-outline" style={{ color: '#daa520'}}/> 
+          </CardItem>
+
+          <CardItem style = {{ justifyContent: 'center'}}>
+       
+            <Text note style={{ fontSize: 16}}> Excellent</Text>
+
+          </CardItem>
+
+          <CardItem >
+       
+            <Text><Text>Comments</Text><Text> 12</Text></Text>
+            <Text style={{ color: '#115175'}}> add a comment</Text>
+
+          </CardItem>
+
+          <Container>
+                
+                            <SingleCommentComponent/>
+                       
+                            <SingleCommentComponent/>
+                        
+                            <SingleCommentComponent/>
+                    
+          </Container>
+
     </Content>
 
     <Footer>
@@ -58,8 +85,6 @@ class RatingsDisplay extends Component<Props> {
       </FooterTab>
     </Footer>
   </Container>
-
-     
    );
  }
 }
