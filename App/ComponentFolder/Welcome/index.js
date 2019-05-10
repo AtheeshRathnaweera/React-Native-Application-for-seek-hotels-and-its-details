@@ -2,7 +2,8 @@
 import React, {Component} from 'react';
 import {Platform, Text, View, Alert, ToastAndroid} from 'react-native';
 import styles from './styles'
-import { TextInput, Button } from 'react-native-paper';
+import { TextInput} from 'react-native-paper';
+import { Container, Content, Button, Icon, Grid, Col } from 'native-base';
 
 type Props = {};
 class Welcome extends Component<Props> {
@@ -36,61 +37,40 @@ class Welcome extends Component<Props> {
 
    return (
 
-    <View style= {parent} >
-
-      <View style={upperBox} />
-       
-
-     <View style={welcomeTxtHolder} >
-       <Text style={welcomeTxt}>WELCOME</Text>
-     </View>
-
-     <View style={formHolder} >
-          <TextInput
-              style={inputFields}
-              mode = 'outlined'
-              label= 'Name'
-              selectionColor='#115175'
-              value= {this.state.name}
-              onChangeText={textName => this.setState({ name : textName })}
-          />
-
-          <TextInput
-              style={inputFields}
-              mode = 'outlined'
-              label= 'Password'
-              selectionColor='#115175'
-              TextInputOutlined = '#115175'
-              value= {this.state.passsword}
-              onChangeText={textPassword => this.setState({ password : textPassword })}
-              secureTextEntry={true} 
-          />
-
-          <View style={logInButtonHolder}>
-
-              <Button mode="contained" style={buttonStyle} onPress={_=>this.checkLogin()}>
-                  LOG IN
-              </Button>
-
-              <Button mode="contained" style={buttonStyle}>
-                  LOG IN VIA FACEBOOK
-              </Button>
-
-          </View>
-
-    </View>
-
-    <View style={signinhereHolder} >
-       <Text style={signinHereText}>Don't have an account? Sign in from here.</Text>
-
-        <Button mode="contained" style={buttonStyle} onPress={()=>this.props.navigation.navigate('signin')}>
-            SIGN IN
-        </Button>
+    <Container >
 
 
-     </View>
+    
 
-   </View>
+        <Content contentContainerStyle={{flex: 1}} >
+
+         <Grid style={{ alignItems: 'center'}}>
+
+         <Col>
+
+         <Button block iconLeft danger style={{ marginRight: 10, marginLeft: 10}}>
+            <Icon name='logo-google' />
+            <Text style={ {color:'#ffff', fontSize: 19}}>    Login with GOOGLE</Text>
+          </Button>
+
+          <Button block iconLeft style={{ marginRight: 10, marginLeft: 10, marginTop:9}} >
+            <Icon name='logo-facebook' />
+            <Text style={ {color:'#ffff', fontSize: 19}}>    or with FACEBOOK</Text>
+          </Button>
+
+
+         </Col>
+
+         </Grid>
+
+        
+          
+
+        </Content>
+
+    </Container>
+
+
      
    );
  }

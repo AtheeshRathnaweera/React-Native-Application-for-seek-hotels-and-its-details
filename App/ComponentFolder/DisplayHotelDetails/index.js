@@ -5,7 +5,7 @@ import SearchBarComponent from '../SearchBarComponent';
 import { Container, Header, Content, Footer, FooterTab, Button, Text , Body, Left, Right, 
         Title, Toast, List, ListItem, Thumbnail,Icon} from 'native-base';
 import {Platform, View, SafeAreaView, Image,StyleSheet, TouchableWithoutFeedback,Alert} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from 'react-native';
 
 
 type Props = {};

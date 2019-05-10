@@ -21,16 +21,16 @@ export default StyleSheet.create({
     },
 
     formHolder:{
-        flex:2,
-        flexDirection: 'column'
+        flex:1,
+        marginRight:10,
+        marginLeft: 10,
     },
 
     parent:{
         flex:1,
         justifyContent: 'center',
-        backgroundColor: 'rgb(237,249,249)',
-    
-        flexDirection: 'column'
+        //backgroundColor: 'rgb(237,249,249)',
+        backgroundColor: '#ffff'
     },
     upperBox:{
         flex:1
